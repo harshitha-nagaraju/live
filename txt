@@ -1,0 +1,180 @@
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Gmail with screen readers
+Enable desktop notifications for Gmail.
+   OK  No, thanks
+2 of 1,405
+Document from HARSHITHA A N
+Inbox
+
+Harshitha A N <harshithaan2004@gmail.com>
+Attachments
+11:41 (6 minutes ago)
+to me
+
+1.MAVEN.txt 
+One attachment
+  • Scanned by Gmail
+1.MAVEN
+
+-create a maven project by selecting one new folder
+- Go to File > New > Project.
+-Choose Maven > Maven Project > Click Next.
+-Check Create a simple project (skip archetype selection) > Click Next.
+-Fill in:
+Group Id: maven.lab6
+Artifact Id: htmldemo
+Click Finish
+-Create a folder named HTML inside src/main/resources/, and add a file called demo.html with the following content:
+
+<html>
+  <body>
+    <p>firstname: Lakshmi</p>
+    <p>lastname: Varnika</p>
+  </body>
+</html>
+-open pom.xml(copy this)
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>maven.lab6</groupId>
+    <artifactId>htmldemo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>htmldemo</name>
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+    
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.17.2</version>
+        </dependency>
+    </dependencies>
+</project>
+
+-After saving, right-click your project > Maven > Update Project to download Jsoup.
+-Write Java Code (demo.java)
+Create demo.java inside src/main/java/maven/lab6/ and paste:
+
+package maven.lab6;
+
+import java.io.InputStream;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class demo {
+    public static void main(String[] args) {
+        try (InputStream input = demo.class.getClassLoader().getResourceAsStream("HTML/demo.html")) {
+            if (input == null) {
+                System.out.println("demo.html file not found");
+                return;
+            }
+
+            // Parse HTML file using Jsoup
+            Document doc = Jsoup.parse(input, "UTF-8", "");
+
+            // Extract values
+            String firstname = doc.select("p:contains(firstname)").text().replace("firstname: ", "");
+            String lastname = doc.select("p:contains(lastname)").text().replace("lastname: ", "");
+
+            // Output
+            System.out.println("First name: " + firstname);
+            System.out.println("Last name: " + lastname);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+-Right-click on demo.java > Run As > Java Application
+
+
+
+1.MAVEN.txt
+Displaying 1.MAVEN.txt.
+
+
+
+
+
+
+Conversation opened. 6 messages. 3 messages unread.
+
+Skip to content
+Using Gmail with screen readers
+Enable desktop notifications for Gmail.
+   OK  No, thanks
+3 of 1,405
+(no subject)
+Inbox
+
+Harshitha A N <harshithaan2004@gmail.com>
+Sun 25 May, 18:10 (17 hours ago)
+to me
+
+FROM python:3.9.11-slim
+COPY palindrome.py /palindrome.py
+WORKDIR /
+CMD ["python","palindrome.py"]
+
+Harshitha A N
+Sun 25 May, 18:12 (17 hours ago)
+FROM openjdk WORKDIR /app COPY . /app RUN javac GFG.java CMD ["java","GFG"]
+
+Harshitha A N <harshithaan2004@gmail.com>
+Sun 25 May, 18:44 (17 hours ago)
+to me
+
+package vvce.harshi;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class demo2 {
+public static void main(String[] args) throws IOException, ParseException {
+JSONParser jsonparser = new JSONParser();
+FileReader reader = new FileReader(".\\JSON\\demo.json");
+Object obj = jsonparser.parse(reader);
+JSONObject empjsonobj = (JSONObject)obj;
+
+String fname = (String) empjsonobj.get("firstname");
+String lname = (String) empjsonobj.get("lastname");
+
+System.out.println("first name:"+fname);
+System.out.println("Last name:"+lname);
+}
+}
+
+
+
+http://localhost:8080
+
+
+
+https://slack.github.com/
+
+
+
+/github subscribe microsoft/vscode
+
+Displaying 1.MAVEN.txt.
